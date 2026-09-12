@@ -1,4 +1,4 @@
-**SOC Simulator - Where you Attack, Simulate, Detect, Triage, and Respond**
+# **SOC Simulator - Where you Attack, Simulate, Detect, Triage, and Respond**
 
 
 <h3>Phase 1: Client Architecture Setup </h3>
