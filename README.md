@@ -1,4 +1,4 @@
-# **SOC Simulator - Where you Attack, Simulate, Detect, Triage, and Respond**
+**SOC Simulator - Where you Attack, Simulate, Detect, Triage, and Respond**
 
 
 <h3>Phase 1: Client Architecture Setup </h3>
@@ -187,12 +187,64 @@ This helps us also see that how, upon clicking a single url, initially and the t
 
 <b>2. Mannual Interactive Phishing Site Sandbox</b>
 
+![alt text](image.png)
+
 <b>Use Case:</b> 
 If an analyst wish to see, collect snapshots of each webpage, from each page the user would hypothetically land upon, or rather would get redirected to with respect to the Phishing website, is where this tool comes in handy.
 
+How does this help in Investigation?
+
+* <b>  clicks:</b> Captures exact DOM targets you interacted with (e.g., Tag: BUTTON, ID: login-btn, Class: btn-primary, inner text, destination href).
+
+* <b> network_requests:</b> Every background HTTP/XHR/Fetch request triggered by your manual clicks, including headers, payload targets, and method types.
+
+* <b>console_logs:</b> JavaScript execution logs, errors, and custom telemetry events emitted by the page.
+
+* <b>downloads:</b> Any malicious payloads, executables, or scripts that the page attempts to auto-download during interaction.
+
+* <b>manual_final_state.png:</b> A high-resolution screenshot captured when you press Ctrl+C to end the session.
 
 
+To run the mini sandbox kind of view: 
 
+```python
+pgrep -fl "Xvfb|x11vnc|novnc"
+```
+If we have no output it means the actual server is not running, and hence we have to make it listen.
+
+```bash
+Xvfb :99 -screen 0 1280x1024x24 &
+x11vnc -display :99 -forever -shared -rfbport 5900 &
+/usr/share/novnc/utils/novnc_proxy --vnc localhost:5900 --listen 6080 &
+```
+
+We visit the phishing link website:
+
+![alt text](image-9.png)
+
+
+We even click on the learn more to redirect to another page:
+
+![alt text](image-10.png)
+
+The logs on the cli gets noted as shown:
+![alt text](image-11.png)
+
+Once we end the seession we also get to see the website screen shot being taken after we terminate the session:
+
+![alt text](image-12.png)
+
+We can view the screenshot images of the sites but by first creating a request to host the list of directories of the particular directory we are in and print it out.
+
+```bash
+python3 -m http.server 8080
+```
+
+![alt text](image-13.png)
+
+![alt text](image-14.png)
+
+![alt text](image-15.png)
 
 
 <b>3. Co-Relation Analyzer Tool Depictor (URL_Analyzer) </b>
