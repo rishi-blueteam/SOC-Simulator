@@ -4,7 +4,7 @@
 <h3>Phase 1: Client Architecture Setup </h3>
 
 
-![alt text](<Phase 1 Client Architecture Setup MD.png>)
+![alt text](/Readme_Images/Phase%201%20Client%20Architecture%20Setup%20MD.png)
 
 <h4> Gateway 1: Postfix MTA Configuration </h4> 
 
@@ -87,13 +87,13 @@ Now since our user is created:
 We can send a sample mail via Postfix to see if the mail goes to the Mail Storage(Dovcot) and the the client could then access it.
 
 
-![alt text](image-4.png)
+![alt text](/Readme_Images/image-4.png)
 
 We see this big long text of random strings is as every new mail represents as a new file and a dedicated string for each new file.
 
 Lets see the list of files the user has opened in the image below.
 
-![alt text](image-5.png)
+![alt text](/Readme_Images/image-5.png)
 
 
 <h4> Gate 4: Roundcube Webmail Installation & Verification </h4> 
@@ -116,9 +116,9 @@ This is the planned ouput
 
 <b>Results:</b>
 
-![alt text](image-2.png)
+![alt text](/Readme_Images/image-2.png)
 
-![alt text](image-3.png)
+![alt text](/Readme_Images/image-3.png)
 
 ---------------
 
@@ -135,7 +135,7 @@ Every single Mail parsed is from the replay_phish.py file which will access ever
 ##### Workflow:
 
 
-![alt text](image-1.png)
+![alt text](/Readme_Images/image-1.png)
 
 The <b>MIME parser</b> is simply the component that understands the internal structure of the .eml headers, HTML/plaintext, attachments, MIME boundaries, etc.Now, the replay engine can deliver the email correctly into the simulated client's mailbox.
 
@@ -182,12 +182,12 @@ We have the interactive URL analyzer which helps us automatically run, create sn
 
 This helps us also see that how, upon clicking a single url, initially and the true url when the user lands on the actual page if the url has changed or no. 
 
-![alt text](image-6.png)
+![alt text](/Readme_Images/image-6.png)
 
 
 <b>2. Mannual Interactive Phishing Site Sandbox</b>
 
-![alt text](image.png)
+![alt text](/Readme_Images/image.png)
 
 <b>Use Case:</b> 
 If an analyst wish to see, collect snapshots of each webpage, from each page the user would hypothetically land upon, or rather would get redirected to with respect to the Phishing website, is where this tool comes in handy.
@@ -220,31 +220,31 @@ x11vnc -display :99 -forever -shared -rfbport 5900 &
 
 We visit the phishing link website:
 
-![alt text](image-9.png)
+![alt text](/Readme_Images/image-9.png)
 
 
 We even click on the learn more to redirect to another page:
 
-![alt text](image-10.png)
+![alt text](/Readme_Images/image-10.png)
 
 The logs on the cli gets noted as shown:
-![alt text](image-11.png)
+![alt text](/Readme_Images/image-11.png)
 
 Once we end the seession we also get to see the website screen shot being taken after we terminate the session:
 
-![alt text](image-12.png)
+![alt text](/Readme_Images/image-12.png)
 
-We can view the screenshot images of the sites but by first creating a request to host the list of directories of the particular directory we are in and print it out.
+We can view the screenshot Images of the sites but by first creating a request to host the list of directories of the particular directory we are in and print it out.
 
 ```bash
 python3 -m http.server 8080
 ```
 
-![alt text](image-13.png)
+![alt text](/Readme_Images/image-13.png)
 
-![alt text](image-14.png)
+![alt text](/Readme_Images/image-14.png)
 
-![alt text](image-15.png)
+![alt text](/Readme_Images/image-15.png)
 
 
 <b>3. Co-Relation Analyzer Tool Depictor (URL_Analyzer) </b>
@@ -262,7 +262,7 @@ This tool helps us to do analysis across multiple security vendors tools for url
 
 
 
-![alt text](image-7.png)
+![alt text](/Readme_Images/image-7.png)
 
 
 
